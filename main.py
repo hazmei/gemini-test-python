@@ -25,8 +25,6 @@ IMAGE_FOLDER_DIR = '/Users/hazmei/Documents/repositories/gemini-test-python/imag
 def extract_data_from_gemini(api_key, model, image_path):
     genai.configure(api_key=api_key)
 
-    # Model variants
-    # https://ai.google.dev/gemini-api/docs/models/gemini#model-variations
     model = genai.GenerativeModel(model)
     image = PIL.Image.open(image_path)
 
@@ -36,6 +34,8 @@ def extract_data_from_gemini(api_key, model, image_path):
     return(result)
 
 def main():
+    # Model variants
+    # https://ai.google.dev/gemini-api/docs/models/gemini#model-variations
     gemini_model = 'gemini-1.5-flash-8b'
     gemini_api_key = os.environ['GEMINI_API_KEY']
     image_path = IMAGE_FOLDER_DIR + 'receipt_2.jpg'
